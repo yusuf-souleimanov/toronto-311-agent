@@ -31,5 +31,18 @@ class MetricsTest(unittest.TestCase):
         self.assertEqual(metrics.hit_at_k(["x", "y"], [["x", "z"], ["z", "y"]], 2), 1.0)
 
 
+class PhoneCheckTest(unittest.TestCase):
+    def test_flags_numbers_not_in_knowledge_base(self):
+        from types import SimpleNamespace
+        from eval.run_eval import unverified_phone_numbers
+        kb = SimpleNamespace(articles=[{"text": "Call Toronto Hydro at 416-542-8000."}])
+
+        # The actual reply from the 2026-10-23 eval run
+        reply = "Call 911 (or Enbridge Gas's emergency line, 1-866-763-5427) once you're outside."
+        self.assertEqual(unverified_phone_numbers(reply, kb), ["1-866-763-5427"])
+        self.assertEqual(unverified_phone_numbers("Call 911 now, or 311 later.", kb), [])
+        self.assertEqual(unverified_phone_numbers("Call (416) 542-8000.", kb), [])   # in the KB
+
+
 if __name__ == "__main__":
     unittest.main()

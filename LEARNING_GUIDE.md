@@ -104,6 +104,8 @@ Guardrails to point out:
 - **Retrieval hit@1 and hit@3:** does search find the right article?
 - **Scenarios:** scripted conversations checking the agent calls (and avoids) the right tools, including a prompt-injection attempt.
 
+**Case study:** reading the transcripts (not just PASS/FAIL) showed the agent giving a gas company phone number from memory. The fix was one prompt rule plus an automatic check (`unverified_phone_numbers`). Running the scenario 5 times before and after (4/5 → 0/5) is what proves the fix, because a single run of an LLM proves very little.
+
 **Question:** The threshold and retrieval settings were tuned on the same test questions they're scored on. Why does that make the numbers look better than they really are, and how would you fix it?
 
 ---

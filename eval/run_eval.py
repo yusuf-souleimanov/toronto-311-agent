@@ -3,6 +3,7 @@
     python -m eval.run_eval                  # free parts only: baselines + retrieval
     python -m eval.run_eval --llm            # also classify with Claude models (costs a few cents)
     python -m eval.run_eval --llm --agent    # also run full agent conversations (costs more)
+    python -m eval.run_eval --only gas --repeat 5   # just one scenario, several times
 
 Three parts:
   1. Classification: majority baseline vs TF-IDF vs Claude, on the 96 test messages.
@@ -12,6 +13,7 @@ Three parts:
 
 import argparse
 import json
+import re
 import time
 from collections import Counter
 from datetime import datetime
@@ -113,7 +115,25 @@ def run_retrieval():
 
 # ---- Part 3: agent scenarios -----------------------------------------------
 
-def run_scenarios():
+# Matches North American phone numbers like 1-866-555-1234, (416) 555-1234, 416.555.1234
+PHONE_PATTERN = re.compile(r"(?:\b1[-\s.]?)?\(?\b\d{3}\)?[-\s.]\d{3}[-\s.]\d{4}\b")
+
+
+def unverified_phone_numbers(text, knowledge_base):
+    """Phone numbers in the agent's reply that don't appear in any knowledge base article.
+    (911 and 311 are too short to match the pattern, so they're always allowed.)"""
+    allowed = set()
+    for article in knowledge_base.articles:
+        for number in PHONE_PATTERN.findall(article["text"]):
+            allowed.add(re.sub(r"\D", "", number))   # compare digits only
+    found = []
+    for number in PHONE_PATTERN.findall(text):
+        if re.sub(r"\D", "", number) not in allowed:
+            found.append(number)
+    return found
+
+
+def run_scenarios(only=None, repeat=1):
     from agent311 import data
     from agent311.agent import create_agent
 
@@ -124,6 +144,11 @@ def run_scenarios():
     rows = data.load_requests()
     model = classifier.load()
     knowledge_base = KnowledgeBase()
+
+    if only:
+        scenarios = [s for s in scenarios if only.lower() in s["name"].lower()]
+    # The model's replies vary between runs, so a scenario can be repeated.
+    scenarios = [s for s in scenarios for _ in range(repeat)]
 
     results = []
     for scenario in scenarios:
@@ -142,6 +167,9 @@ def run_scenarios():
         for text in scenario.get("reply_must_contain", []):
             if text not in replies[-1]:
                 problems.append(f"reply missing '{text}'")
+        # Checked for every scenario: no phone numbers from the model's memory.
+        for number in unverified_phone_numbers(" ".join(replies), knowledge_base):
+            problems.append(f"gave unverified phone number {number}")
         if scenario.get("must_submit") and not submitted:
             problems.append("request was not submitted")
         if scenario.get("must_not_submit") and submitted:
@@ -223,7 +251,22 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--llm", action="store_true", help="include Claude classification (costs money)")
     parser.add_argument("--agent", action="store_true", help="run agent scenarios (costs money)")
+    parser.add_argument("--only", help="run only scenarios whose name contains this text (skips parts 1-2)")
+    parser.add_argument("--repeat", type=int, default=1, help="run each scenario this many times")
     args = parser.parse_args()
+
+    if args.only:
+        # Quick check of specific scenarios, e.g.  --only gas --repeat 5
+        if not config.has_api_key():
+            print("ANTHROPIC_API_KEY not set.")
+            return
+        results = run_scenarios(args.only, args.repeat)
+        passed = sum(1 for r in results if r["passed"])
+        print(f"\nPassed {passed}/{len(results)}. Cost ${sum(r['cost_usd'] for r in results):.4f}")
+        for r in results:
+            if not r["passed"]:
+                print(f"  FAIL {r['name']}: {'; '.join(r['problems'])}")
+        return
 
     if (args.llm or args.agent) and not config.has_api_key():
         print("ANTHROPIC_API_KEY not set: running free parts only.")

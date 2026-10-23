@@ -54,6 +54,8 @@ Code:     submits (not Claude) -> DEMO-20261022-231500
 
 **Knowledge base search:** right article first 85%, in top 3 95%.
 
+**A fix found by the eval:** reviewing transcripts showed the agent adding a gas utility phone number from its own memory (not the knowledge base) in the gas-smell scenario. After tightening the system prompt and adding an automatic phone-number check to every scenario, unverified numbers went from **4/5 runs to 0/5**.
+
 ### What this means
 - The LLMs close the gap exactly where keyword features fail: emotional and indirect messages (TF-IDF 69–75% → Claude 94–100%).
 - Haiku reaches 99% at about 1/40th of Opus's cost per message, so it's the sensible default for classification at 311 volume.
