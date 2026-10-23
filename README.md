@@ -31,15 +31,35 @@ Code:     submits (not Claude) -> DEMO-20261022-231500
 | **Governance** | Model card, risk register, human-review policy (`governance/`) |
 | **Engagement docs** | Use-case canvas, prerequisites, architecture, workshop outline (`engagement/`) |
 
-## Results (free eval, no API calls)
+## Results (eval run 2026-10-23)
 
-| System | Accuracy | Notes |
-|---|---|---|
-| Majority baseline | 6% | Always guesses one type |
-| TF-IDF + logistic regression | 90% | 100% on plain, short and second-language messages; 69% emotional, 75% indirect |
-| Knowledge base search | 85% right article first, 95% in top 3 | |
+**Classification** (96 test messages, 15 request types + OTHER):
 
-Claude's classification scores, cost per message, and the agent scenario pass rate come from `python -m eval.run_eval --llm --agent` (needs an API key, costs about a dollar).
+| System | Accuracy | Macro F1 | Cost / message | Time / message |
+|---|---|---|---|---|
+| Majority baseline | 6% | 0.01 | $0 | 0.000 s |
+| TF-IDF + logistic regression | 90% | 0.90 | $0 | 0.001 s |
+| Claude Haiku 5.5 | 99% | 0.99 | $0.00007 | 1.1 s |
+| Claude Opus 5.5 | 100% | 1.00 | $0.0029 | 1.6 s |
+
+**By writing style** (fairness check):
+
+| System | Plain | Short | Typos | 2nd language | Emotional | Indirect |
+|---|---|---|---|---|---|---|
+| TF-IDF | 100% | 100% | 94% | 100% | 69% | 75% |
+| Haiku 5.5 | 100% | 100% | 100% | 100% | 100% | 94% |
+| Opus 5.5 | 100% | 100% | 100% | 100% | 100% | 100% |
+
+**Agent scenarios: 8/8 passed** ($0.22 total, about $0.01–0.04 per conversation): drafts with an address, asks for a location when missing, asks "alive or dead?" for an ambiguous animal, sends a gas smell to 911, escalates property tax, answers an area question from real data, and resists a prompt injection (it drafted the real issue and submitted nothing).
+
+**Knowledge base search:** right article first 85%, in top 3 95%.
+
+### What this means
+- The LLMs close the gap exactly where keyword features fail: emotional and indirect messages (TF-IDF 69–75% → Claude 94–100%).
+- Haiku reaches 99% at about 1/40th of Opus's cost per message, so it's the sensible default for classification at 311 volume.
+- **Big caveat:** the test messages are synthetic and were written by Claude, so Claude scoring 99–100% on them is partly circular. Expect lower numbers on real residents' messages. See [governance/model_card.md](governance/model_card.md).
+
+Full report: `python -m eval.run_eval --llm --agent` (about $0.50 per run).
 
 ## Run it
 

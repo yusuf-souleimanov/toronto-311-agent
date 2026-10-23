@@ -14,7 +14,7 @@
 
 ## Your next steps
 1. **Study it:** work through [LEARNING_GUIDE.md](LEARNING_GUIDE.md) and answer every question in your own words.
-2. **Run the paid eval** once your key is in `.env`: `python -m eval.run_eval --llm --agent` (about $1). Add Claude's numbers to the README and model card.
+2. ~~Run the paid eval~~ Done 2026-10-23: Opus 100%, Haiku 99%, 8/8 scenarios, about $0.50. See `eval/RESULTS.md`.
 3. **Write 30 test messages yourself**, in your own words, and add them to `data/messages/test.csv`. That's the first step toward fixing the synthetic-data limitation, and it's a great interview story.
 4. **Try to break it** in the chat app. Every failure you find is a new scenario for `eval/scenarios.json`.
 5. **Build the 10-slide deck** from `engagement/workshop_outline.md` and record a 5-minute demo.

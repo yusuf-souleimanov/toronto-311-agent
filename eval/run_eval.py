@@ -16,6 +16,8 @@ import time
 from collections import Counter
 from datetime import datetime
 
+import anthropic
+
 from agent311 import classifier, config, llm
 from agent311.knowledge import KnowledgeBase
 
@@ -228,7 +230,11 @@ def main():
         args.llm = args.agent = False
 
     print("Classification...")
-    classification = run_classification(args.llm)
+    try:
+        classification = run_classification(args.llm)
+    except anthropic.AuthenticationError:
+        print("The API key was rejected (401). Check ANTHROPIC_API_KEY in this project's .env.")
+        return
     print("Retrieval...")
     retrieval = run_retrieval()
     scenarios = None
