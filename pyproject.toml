@@ -1,0 +1,27 @@
+[project]
+name = "compliance-agent"
+version = "0.1.0"
+description = "Governed, evaluated agentic assistant for supplier document compliance review"
+requires-python = ">=3.11"
+dependencies = [
+    "pymupdf>=1.24",
+    "pdfplumber>=0.11",
+    "langgraph>=0.2",
+    "langchain-anthropic>=0.3",
+    "anthropic>=0.40",
+    "chromadb>=0.5",
+    "pydantic>=2.7",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+baseline = ["scikit-learn>=1.5"]
+ui = ["streamlit>=1.38"]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
