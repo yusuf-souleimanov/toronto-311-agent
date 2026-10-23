@@ -1,6 +1,9 @@
-> Snapshot of `eval/reports/report-20261023-001143.md`, the paid eval run with Claude classification and agent scenarios. Regenerate with `python -m eval.run_eval --llm --agent`.
+> Sections 1-2: paid run of 2026-10-23 00:11 (Claude classification; unaffected by later prompt changes).
+> Section 3: agent scenarios re-run 2026-10-23 00:18, after the phone-number rule was added to the system prompt.
+> Every scenario now also fails if a reply contains a phone number not in the knowledge base.
+> Regenerate everything with `python -m eval.run_eval --llm --agent`.
 
-# Evaluation report (2026-10-23 00:11)
+# Evaluation report
 
 ## 1. Classification (96 test messages, 16 classes)
 
@@ -58,7 +61,7 @@ If the agent asks a question whenever confidence is below the threshold:
 
 ## 3. Agent scenarios
 
-Passed 8/8. Total cost $0.2242.
+Passed 8/8. Total cost $0.2265.
 
 - **happy path: pothole with address**: PASS. Tools: classify_request, search_city_info, draft_service_request
 - **asks for location before drafting**: PASS. Tools: classify_request, search_city_info
