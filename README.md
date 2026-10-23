@@ -1,33 +1,62 @@
-# Supplier Document Compliance Agent
+# Toronto 311 Assistant
 
-An agentic assistant that reviews supplier documents (certificates, letters, attestations), extracts key fields, and flags documents that are out of compliance. Low-confidence decisions go to a human reviewer.
+A conversational AI agent that helps Toronto residents file non-emergency 311 service requests. It understands the problem, asks clarifying questions when unsure, looks up real City data about the resident's area, and drafts a request that **only the resident can submit**.
 
-The project is set up like a client engagement: use-case definition → prerequisites → build → evaluation → governance → workshop.
+Built as an end-to-end agentic AI engagement: use-case definition, build, evaluation against a traditional ML baseline, governance, and a client workshop outline.
 
-## Repo map
+> Unofficial portfolio project. Uses [City of Toronto Open Data](https://open.toronto.ca/dataset/311-service-requests-customer-initiated/) (Open Government Licence – Toronto). Nothing is sent to the City.
 
-| Folder | What lives there |
+## What it does
+
+```
+Resident: "there's a raccoon lying on the sidewalk at Bloor and Ossington"
+Agent:    classify_request -> "Pick up Dead Wildlife" 0.23 vs "Injured - Wildlife" 0.22  (not confident)
+          "Is the raccoon alive or dead?"
+Resident: "dead"
+Agent:    search_city_info -> tips;  draft_service_request -> draft
+          "Here's your request: ... Reply yes to submit."
+Resident: "yes"
+Code:     submits (not Claude) -> DEMO-20261022-231500
+```
+
+| Piece | What it is |
 |---|---|
-| `src/compliance_agent/` | The agent: extraction, tools, LangGraph graph, audit log |
-| `eval/` | Evaluation harness: labelled set, predictors (baseline vs LLMs), metrics, reports |
-| `data/` | Public source documents (`raw/`), extracted text (`processed/`), ground-truth labels (`labels/`) |
-| `governance/` | Model card, NIST AI RMF risk register, human-review policy |
-| `engagement/` | Use-case canvas, prerequisites checklist, solution architecture, workshop outline |
-| `tests/` | Unit tests |
+| **Agent loop** | Hand-written Claude tool-use loop (`agent311/agent.py`), 5 tools, step limit |
+| **Traditional ML** | TF-IDF + logistic regression classifier (`agent311/classifier.py`), used as a tool and as the baseline |
+| **Real data** | 500,269 Toronto 311 requests from 2025 (`agent311/data.py`, `agent311/stats.py`) |
+| **Retrieval (RAG)** | TF-IDF search over a 20-article knowledge base (`agent311/knowledge.py`) |
+| **Human-in-the-loop** | Claude can only *draft*; submission happens in code after the resident types "yes" |
+| **Audit log** | Every message, tool call and result as JSON lines (`logs/`) |
+| **Evaluation** | Classification (by writing style), retrieval, and scripted agent scenarios (`eval/`) |
+| **Governance** | Model card, risk register, human-review policy (`governance/`) |
+| **Engagement docs** | Use-case canvas, prerequisites, architecture, workshop outline (`engagement/`) |
 
-## Quick start
+## Results (free eval, no API calls)
+
+| System | Accuracy | Notes |
+|---|---|---|
+| Majority baseline | 6% | Always guesses one type |
+| TF-IDF + logistic regression | 90% | 100% on plain, short and second-language messages; 69% emotional, 75% indirect |
+| Knowledge base search | 85% right article first, 95% in top 3 | |
+
+Claude's classification scores, cost per message, and the agent scenario pass rate come from `python -m eval.run_eval --llm --agent` (needs an API key, costs about a dollar).
+
+## Run it
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
-pip install -e ".[baseline,dev]"
-copy .env.example .env
+pip install -r requirements.txt
+copy .env.example .env          # then paste your ANTHROPIC_API_KEY into .env
+
+python -m agent311.data         # download the 2025 data (~7 MB zip, 75 MB CSV)
+python -m agent311.classifier   # train the classifier
 python -m unittest discover -s tests -t .
-python -m eval.run_eval --predictors dummy
+python -m eval.run_eval         # free eval
+streamlit run app.py            # web chat
+python -m agent311.chat         # or terminal chat
 ```
 
-## Data rule
+## Where to start reading
 
-**Only public documents.** No externship, employer, or client material. Write down where each document came from in `data/README.md`.
-
-See [PLAN.md](PLAN.md) for the 4-week milestones.
+See [LEARNING_GUIDE.md](LEARNING_GUIDE.md) for the reading order and the key ideas behind each file.

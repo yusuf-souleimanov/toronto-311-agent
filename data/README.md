@@ -1,25 +1,17 @@
 # Data
 
-- `raw/`: original public PDFs, named `<doc_id>.pdf` (for example `D001.pdf`). Not committed.
-- `processed/`: extracted text, `<doc_id>.txt`, written by `compliance_agent.extraction`. Not committed.
-- `labels/labels.csv`: hand-labelled ground truth, one row per document. **Committed.**
+## `raw/SR2025.csv`: City of Toronto 311 open data (not in git)
+- Source: [311 Service Requests – Customer Initiated](https://open.toronto.ca/dataset/311-service-requests-customer-initiated/), City of Toronto Open Data, 2025 file. Licence: Open Government Licence – Toronto.
+- Download with `python -m agent311.data` (~7 MB zip, 75 MB CSV, 500,269 rows).
+- Columns: `Creation Date`, `Status`, `First 3 Chars of Postal Code` (or the word "Intersection"), `Intersection Street 1`, `Intersection Street 2`, `Ward`, `Service Request Type` (539 distinct), `Division`, `Section`.
+- **Not included in the City's data:** the resident's description of the problem, and the date the request was closed.
 
-## Label schema (`labels/labels.csv`)
+## `messages/`: resident messages (synthetic)
+Because the open data has no free text, these messages were **written for this project** (by Claude, during development) to look like what residents might type.
+- `train.csv`: 160 messages, 10 per class (15 request types + `OTHER`).
+- `test.csv`: 96 messages, 6 per class, one per writing style: `plain`, `short`, `typos`, `second_language`, `emotional`, `indirect`. Written separately from the training messages.
 
-| Column | Format | Notes |
-|---|---|---|
-| `doc_id` | `D001` | Matches the file name in `raw/` |
-| `doc_type` | one of `certificate`, `letter`, `attestation`, `audit_report`, `other` | Edit `DOC_TYPES` in `src/compliance_agent/schema.py` if you change this list |
-| `vendor_name` | free text | Legal name as printed |
-| `issue_date` | `YYYY-MM-DD` or blank | Blank if the document has no date |
-| `is_compliant` | `true` / `false` | Ground truth from the rule in `compliance_agent.rules` |
-| `source_url` | URL | Where you got the public document |
-| `notes` | free text | Anything odd: scan quality, two dates, handwriting |
+**Limitation:** same author for train and test, and not real residents. Add your own messages to `test.csv` (same columns) to get a more honest score.
 
-## Sourcing log
-
-Fill this in as you collect documents. Aim for about 100, with a deliberate mix of clean, scanned, and tricky ones.
-
-| doc_id | Source | Why it's in the set |
-|---|---|---|
-| | | |
+## `city_info/`: knowledge base (demo content)
+20 short articles written for this project. General guidance, **not official City policy**. See `city_info/README.md`.

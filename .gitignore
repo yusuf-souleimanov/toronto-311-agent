@@ -3,10 +3,9 @@ __pycache__/
 *.pyc
 .env
 data/raw/*
-data/processed/*
 !data/raw/.gitkeep
-!data/processed/.gitkeep
+models/
+logs/
+outbox/
 eval/reports/*
 !eval/reports/.gitkeep
-logs/
-chroma/

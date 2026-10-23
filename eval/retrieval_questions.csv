@@ -1,0 +1,21 @@
+question,expected_file
+"what should I check before reporting a missed garbage pickup",garbage-not-picked-up.md
+"my green bin was skipped what do I do",green-bin-not-picked-up.md
+"I smell gas in my house",emergencies.md
+"a tree branch is touching the power lines",tree-emergency.md
+"what information do you need from me, do I have to give my phone number",privacy.md
+"how do I describe where the problem is",location-tips.md
+"the pothole damaged my car can I get money back",pothole-road-damage.md
+"is it safe to pick up an injured bird",injured-wildlife.md
+"there is a dead raccoon on my lawn",dead-wildlife.md
+"my basement drain is overflowing with sewage",sewer-backup.md
+"the walk button at the crosswalk is broken",traffic-signals.md
+"the condo site starts drilling at 6am on sundays",construction-noise.md
+"neighbour is blasting music at night",amplified-noise.md
+"someone left an old mattress on the boulevard",illegal-dumping.md
+"my landlord won't fix the mould in my apartment",property-standards.md
+"the sidewalk near the school is covered in ice",sidewalk-snow.md
+"branches from the city tree block the streetlight",tree-pruning.md
+"the lid of my recycling bin snapped off",bin-lid-damaged.md
+"can 311 help me pay my property tax",about-311.md
+"a big tree fell on my car in the storm",tree-emergency.md

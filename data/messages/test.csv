@@ -1,0 +1,97 @@
+text,request_type,style
+"There is a pothole on Jane Street that damaged my rim",Road Pothole / Road Damage,plain
+"pothole",Road Pothole / Road Damage,short
+"theres a realy bad hole in teh road on my strete",Road Pothole / Road Damage,typos
+"The road have big hole, cars must go around it",Road Pothole / Road Damage,second_language
+"I am SO tired of dodging this giant hole every single day, fix it already!!",Road Pothole / Road Damage,emotional
+"Cyclists keep falling at the same spot where the asphalt is gone",Road Pothole / Road Damage,indirect
+"Garbage was not collected at my house on Monday",Res / Garbage / Not Picked Up,plain
+"garbage missed",Res / Garbage / Not Picked Up,short
+"my garbige didnt get pickd up todya",Res / Garbage / Not Picked Up,typos
+"Garbage truck not come, my bin is still full",Res / Garbage / Not Picked Up,second_language
+"Third time this month the garbage was skipped, this is ridiculous",Res / Garbage / Not Picked Up,emotional
+"Every house on the street has an empty bin except mine, the black one",Res / Garbage / Not Picked Up,indirect
+"The green bin was not emptied on collection day",Res / Organic Green Bin / Not Picked Up,plain
+"green bin skipped",Res / Organic Green Bin / Not Picked Up,short
+"grean bin wasnt colected",Res / Organic Green Bin / Not Picked Up,typos
+"My bin for food waste, nobody take it this week",Res / Organic Green Bin / Not Picked Up,second_language
+"The compost is rotting in the heat because you people skipped it again",Res / Organic Green Bin / Not Picked Up,emotional
+"Flies everywhere because the organics are still sitting at the curb",Res / Organic Green Bin / Not Picked Up,indirect
+"The lid on my city bin is cracked",Residential Bin Lid Damaged,plain
+"broken bin lid",Residential Bin Lid Damaged,short
+"my bin lidd is brokn and wont shut",Residential Bin Lid Damaged,typos
+"The cover of my bin is break, it not close",Residential Bin Lid Damaged,second_language
+"The collectors smashed my lid AGAIN and now animals are eating the trash",Residential Bin Lid Damaged,emotional
+"Raccoons get into my cart because the top won't stay closed anymore",Residential Bin Lid Damaged,indirect
+"There is a dead raccoon in my front yard",Pick up Dead Wildlife,plain
+"dead squirrel",Pick up Dead Wildlife,short
+"ded racoon on the sidwalk",Pick up Dead Wildlife,typos
+"Animal is dead on the street, please take away",Pick up Dead Wildlife,second_language
+"Disgusting, a dead animal has been rotting by my door for days and nobody cares",Pick up Dead Wildlife,emotional
+"There's a skunk on the road that hasn't moved since yesterday and it stinks",Pick up Dead Wildlife,indirect
+"There is an injured bird in the park that cannot fly",Injured - Wildlife,plain
+"hurt raccoon",Injured - Wildlife,short
+"injerd fox in my yard limpin",Injured - Wildlife,typos
+"Small animal is hurt, it cannot walk, still alive",Injured - Wildlife,second_language
+"Please hurry, there's a poor goose bleeding on the path and I don't know what to do",Injured - Wildlife,emotional
+"A squirrel keeps dragging its back legs across my lawn",Injured - Wildlife,indirect
+"The city tree on my boulevard needs to be trimmed",General Pruning,plain
+"tree trimming",General Pruning,short
+"tree branchs need triming by my hous",General Pruning,typos
+"Tree in front of house is too big, branches touch my roof",General Pruning,second_language
+"I've asked for years to have this overgrown tree cut back and still nothing",General Pruning,emotional
+"Trucks keep scraping the low limbs of the street tree when they drive by",General Pruning,indirect
+"A tree fell across our street during the storm",Tree Emergency Clean-Up,plain
+"fallen tree",Tree Emergency Clean-Up,short
+"big tre fell down on the rode after the wind",Tree Emergency Clean-Up,typos
+"Storm make the tree fall, now nobody can pass",Tree Emergency Clean-Up,second_language
+"A huge branch nearly crushed my kid, it's lying across the sidewalk right now",Tree Emergency Clean-Up,emotional
+"After last night's wind there's a trunk blocking both lanes",Tree Emergency Clean-Up,indirect
+"The sidewalk on my street still has not been cleared of snow",Sidewalk Snow Clearing Required,plain
+"sidewalk not plowed",Sidewalk Snow Clearing Required,short
+"the sidwalk is ful of snow nobody plowd it",Sidewalk Snow Clearing Required,typos
+"Snow on walking path is very high, I cannot walk to bus",Sidewalk Snow Clearing Required,second_language
+"My elderly mother slipped because this sidewalk is a sheet of ice, unacceptable",Sidewalk Snow Clearing Required,emotional
+"Kids are walking on the road to school because the pedestrian path is buried",Sidewalk Snow Clearing Required,indirect
+"Sewage is backing up into my basement floor drain",Sewer Service Line-Blocked,plain
+"sewer backup",Sewer Service Line-Blocked,short
+"sewr is blockd and basment drain overflowin",Sewer Service Line-Blocked,typos
+"Dirty water coming up in basement from pipe, toilet not work",Sewer Service Line-Blocked,second_language
+"My basement is flooding with sewage and I have a newborn, I need help now",Sewer Service Line-Blocked,emotional
+"Every time someone showers upstairs, water bubbles up from the floor drain downstairs",Sewer Service Line-Blocked,indirect
+"The traffic signal at my intersection is not working",Traffic Signal Repair,plain
+"traffic light out",Traffic Signal Repair,short
+"trafic lite stuck on red forevr",Traffic Signal Repair,typos
+"The light for cars is not change colour, always red",Traffic Signal Repair,second_language
+"Someone is going to get killed, the lights at this corner have been dead all day",Traffic Signal Repair,emotional
+"Drivers are treating the intersection like a four-way stop because nothing lights up",Traffic Signal Repair,indirect
+"My neighbour plays very loud music late at night",Amplified Sound or Instrument Sound,plain
+"loud music",Amplified Sound or Instrument Sound,short
+"neighbor blastin musik at 3am",Amplified Sound or Instrument Sound,typos
+"Very loud speaker music from next house, I cannot sleep",Amplified Sound or Instrument Sound,second_language
+"I have work at 6am and this guy's subwoofer is shaking my whole apartment, please do something",Amplified Sound or Instrument Sound,emotional
+"I can hear every lyric from the unit below through my floor at midnight",Amplified Sound or Instrument Sound,indirect
+"A construction site near me is making noise before 7am",Construction Noise,plain
+"construction noise",Construction Noise,short
+"constrution site drilling at nite",Construction Noise,typos
+"Building work make big noise very early morning",Construction Noise,second_language
+"Jackhammers at 5am on a Sunday, are you kidding me",Construction Noise,emotional
+"The condo project's machines start up before sunrise every day",Construction Noise,indirect
+"Someone dumped a pile of garbage on the side of the road",Clean up Illegal Dumping on City Road Allowance,plain
+"illegal dumping",Clean up Illegal Dumping on City Road Allowance,short
+"sum one dumpd a mattres on the road",Clean up Illegal Dumping on City Road Allowance,typos
+"People leave old furniture on street, not their house",Clean up Illegal Dumping on City Road Allowance,second_language
+"Our street is turning into a landfill, people dump their junk here every weekend",Clean up Illegal Dumping on City Road Allowance,emotional
+"A stack of drywall and paint cans appeared overnight on the boulevard",Clean up Illegal Dumping on City Road Allowance,indirect
+"The house next to me is in very poor condition with broken windows",Property Standards and Maintenance Violations,plain
+"landlord won't fix",Property Standards and Maintenance Violations,short
+"my landlrd wont fix the mold in my apartmnt",Property Standards and Maintenance Violations,typos
+"Building where I rent has broken stairs, owner not repair",Property Standards and Maintenance Violations,second_language
+"My kids are getting sick from the mould and the landlord just laughs at us",Property Standards and Maintenance Violations,emotional
+"The vacant place on the corner has a porch that looks ready to collapse",Property Standards and Maintenance Violations,indirect
+"How do I pay a parking ticket online",OTHER,plain
+"property tax",OTHER,short
+"wen does the libary open",OTHER,typos
+"I want license for my cat, where I go",OTHER,second_language
+"I've been on hold forever just to ask about my water bill, why is this so hard",OTHER,emotional
+"My daughter wants to sign up for summer camp at the community centre",OTHER,indirect

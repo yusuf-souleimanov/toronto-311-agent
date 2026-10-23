@@ -1,0 +1,161 @@
+text,request_type
+"There's a huge pothole on my street that keeps getting bigger",Road Pothole / Road Damage
+"The road in front of my house is all cracked and broken up",Road Pothole / Road Damage
+"My car hit a deep hole on Dufferin and now my tire is flat",Road Pothole / Road Damage
+"Big chunk of asphalt missing in the middle of the lane",Road Pothole / Road Damage
+"Can someone fix the crater near the bus stop on Queen",Road Pothole / Road Damage
+"Road surface is crumbling near the intersection, cyclists are swerving around it",Road Pothole / Road Damage
+"Several potholes on our residential street after the winter",Road Pothole / Road Damage
+"The pavement has sunk near the manhole cover and it's dangerous",Road Pothole / Road Damage
+"Pothole filled with water, you can't even see how deep it is",Road Pothole / Road Damage
+"Damaged road at the corner, the asphalt is lifting up",Road Pothole / Road Damage
+"My garbage wasn't collected this morning",Res / Garbage / Not Picked Up
+"The garbage truck skipped our house again",Res / Garbage / Not Picked Up
+"It was garbage day yesterday and my bin is still full at the curb",Res / Garbage / Not Picked Up
+"Trash was not picked up on our whole street this week",Res / Garbage / Not Picked Up
+"They took the recycling but left my garbage bin",Res / Garbage / Not Picked Up
+"Black garbage bin still sitting out, nobody came",Res / Garbage / Not Picked Up
+"Missed garbage pickup, bin was out by 7am",Res / Garbage / Not Picked Up
+"Our household waste has been sitting at the curb for two days",Res / Garbage / Not Picked Up
+"Garbage collection didn't happen on my block",Res / Garbage / Not Picked Up
+"The trash collectors missed my house, everyone else got picked up",Res / Garbage / Not Picked Up
+"My green bin wasn't emptied today",Res / Organic Green Bin / Not Picked Up
+"Organics were not collected, the green bin is still full",Res / Organic Green Bin / Not Picked Up
+"Compost bin skipped on collection day",Res / Organic Green Bin / Not Picked Up
+"They forgot my food waste bin this week and it smells",Res / Organic Green Bin / Not Picked Up
+"Green bin left at the curb, everything else was picked up",Res / Organic Green Bin / Not Picked Up
+"Kitchen scraps bin not picked up for the second week",Res / Organic Green Bin / Not Picked Up
+"The organic waste truck never came to our street",Res / Organic Green Bin / Not Picked Up
+"Missed green bin collection on Tuesday",Res / Organic Green Bin / Not Picked Up
+"Raccoon-proof green bin still full after pickup day",Res / Organic Green Bin / Not Picked Up
+"Organics collection was missed at my address",Res / Organic Green Bin / Not Picked Up
+"The lid on my garbage bin is broken",Residential Bin Lid Damaged
+"My bin lid snapped off and won't close anymore",Residential Bin Lid Damaged
+"The truck cracked the lid of my recycling bin",Residential Bin Lid Damaged
+"Bin lid hinge is broken, raccoons keep getting in",Residential Bin Lid Damaged
+"Need a replacement lid for my green bin",Residential Bin Lid Damaged
+"The top of my city bin is split down the middle",Residential Bin Lid Damaged
+"Lid fell off my garbage cart during collection",Residential Bin Lid Damaged
+"My blue bin cover is damaged and flaps open in the wind",Residential Bin Lid Damaged
+"Cart lid is cracked and rain gets inside",Residential Bin Lid Damaged
+"The lid latch on my organics bin is broken",Residential Bin Lid Damaged
+"There's a dead raccoon on the sidewalk",Pick up Dead Wildlife
+"Dead squirrel in front of my driveway",Pick up Dead Wildlife
+"A dead bird has been lying in the park for days",Pick up Dead Wildlife
+"There's a deceased skunk on the road near my house",Pick up Dead Wildlife
+"Can someone remove a dead animal from my front lawn",Pick up Dead Wildlife
+"Dead pigeon on the steps of the building",Pick up Dead Wildlife
+"Found a dead opossum in the laneway",Pick up Dead Wildlife
+"Animal carcass on the boulevard, starting to smell",Pick up Dead Wildlife
+"Dead goose by the pond needs to be picked up",Pick up Dead Wildlife
+"A dead rabbit is in the middle of the bike path",Pick up Dead Wildlife
+"There's an injured raccoon in my backyard that can't walk",Injured - Wildlife
+"A bird with a broken wing is on my balcony",Injured - Wildlife
+"Hurt fox limping around the schoolyard",Injured - Wildlife
+"Squirrel looks badly injured and is lying still but breathing",Injured - Wildlife
+"A goose got hit by a car and is still alive",Injured - Wildlife
+"Wounded skunk hiding under my porch",Injured - Wildlife
+"There's a sick-looking coyote that can barely move",Injured - Wildlife
+"Baby bird fell and seems hurt, what do I do",Injured - Wildlife
+"A raccoon is tangled in netting and bleeding",Injured - Wildlife
+"Injured pigeon that can't fly on the sidewalk",Injured - Wildlife
+"The city tree in front of my house needs trimming",General Pruning
+"Branches from the street tree are hanging over the sidewalk",General Pruning
+"Tree limbs are touching the power lines on our street",General Pruning
+"Can the city prune the tree blocking the stop sign",General Pruning
+"Overgrown tree branches scraping cars on the road",General Pruning
+"The boulevard tree hasn't been trimmed in years",General Pruning
+"Low branches are blocking the streetlight",General Pruning
+"Please trim the city-owned maple outside my window",General Pruning
+"Tree on the road allowance is overgrown and needs cutting back",General Pruning
+"Branches hanging low over the bike lane",General Pruning
+"A big tree fell across the road during the storm",Tree Emergency Clean-Up
+"A large branch came down and is blocking my driveway",Tree Emergency Clean-Up
+"Storm knocked a tree onto the sidewalk",Tree Emergency Clean-Up
+"Fallen tree limb on a car on our street",Tree Emergency Clean-Up
+"Tree split in half after the wind and is leaning on a house",Tree Emergency Clean-Up
+"Huge branches down all over the road after last night",Tree Emergency Clean-Up
+"A city tree uprooted and fell into the park path",Tree Emergency Clean-Up
+"Broken branch hanging and about to fall on people",Tree Emergency Clean-Up
+"Ice storm brought down a tree in front of my home",Tree Emergency Clean-Up
+"Tree debris blocking the whole lane after the storm",Tree Emergency Clean-Up
+"The sidewalk on my street hasn't been plowed",Sidewalk Snow Clearing Required
+"Sidewalk is covered in snow and ice, seniors can't walk",Sidewalk Snow Clearing Required
+"Nobody cleared the snow on the sidewalk near the school",Sidewalk Snow Clearing Required
+"The sidewalk plow skipped our block",Sidewalk Snow Clearing Required
+"Snow piled on the sidewalk, I can't get my stroller through",Sidewalk Snow Clearing Required
+"Icy sidewalk by the bus stop hasn't been cleared",Sidewalk Snow Clearing Required
+"Walkway is impassable after the snowfall",Sidewalk Snow Clearing Required
+"Sidewalk snow clearing never happened on my street",Sidewalk Snow Clearing Required
+"Please send the sidewalk plow, it's been two days",Sidewalk Snow Clearing Required
+"Wheelchair users can't get down the snowy sidewalk",Sidewalk Snow Clearing Required
+"My sewer line is backed up into the basement",Sewer Service Line-Blocked
+"The drain in my basement is overflowing with sewage",Sewer Service Line-Blocked
+"Toilets won't flush and water is coming up the floor drain",Sewer Service Line-Blocked
+"Sewer pipe from my house to the street seems blocked",Sewer Service Line-Blocked
+"Sewage backup in the house, smells terrible",Sewer Service Line-Blocked
+"Plumber says the blockage is on the city side of the sewer line",Sewer Service Line-Blocked
+"All drains in the house are slow and gurgling",Sewer Service Line-Blocked
+"Wastewater is coming up through the basement floor",Sewer Service Line-Blocked
+"Blocked sewer connection, need the city to check it",Sewer Service Line-Blocked
+"Sewer backed up after the heavy rain",Sewer Service Line-Blocked
+"The traffic light at my intersection is stuck on red",Traffic Signal Repair
+"Traffic signal is completely dark at the corner",Traffic Signal Repair
+"Walk signal button doesn't work",Traffic Signal Repair
+"The light keeps flashing yellow in all directions",Traffic Signal Repair
+"Traffic lights are out at Bathurst and Bloor",Traffic Signal Repair
+"One of the signal bulbs is burnt out",Traffic Signal Repair
+"Pedestrian countdown signal isn't working",Traffic Signal Repair
+"Left turn arrow never turns green",Traffic Signal Repair
+"Traffic light pole is bent and the signal is facing the wrong way",Traffic Signal Repair
+"Signals at the intersection are malfunctioning and cars are confused",Traffic Signal Repair
+"My neighbour plays loud music every night until 2am",Amplified Sound or Instrument Sound
+"Someone is blasting a speaker in the park all evening",Amplified Sound or Instrument Sound
+"The bar next door has music so loud my windows shake",Amplified Sound or Instrument Sound
+"Drums being played upstairs late at night",Amplified Sound or Instrument Sound
+"Loud party with a DJ in the backyard",Amplified Sound or Instrument Sound
+"Car stereo booming outside my building every night",Amplified Sound or Instrument Sound
+"Neighbour practices electric guitar with an amp at midnight",Amplified Sound or Instrument Sound
+"Restaurant patio playing music very loudly",Amplified Sound or Instrument Sound
+"Bass from the apartment below keeps me awake",Amplified Sound or Instrument Sound
+"Street performer with a loudspeaker for hours",Amplified Sound or Instrument Sound
+"Construction crew started jackhammering at 6am",Construction Noise
+"The building site next door is working on Sunday morning",Construction Noise
+"Renovation noise from the house beside me late in the evening",Construction Noise
+"Concrete trucks and drilling before 7 in the morning",Construction Noise
+"Demolition noise after hours on our street",Construction Noise
+"Contractors using power saws at 10pm",Construction Noise
+"Pile driving at the condo site starts way too early",Construction Noise
+"Excavator running at night at the construction site",Construction Noise
+"Roofers hammering on a holiday morning",Construction Noise
+"Constant banging from the development site on weekends",Construction Noise
+"Someone dumped an old mattress on the side of the road",Clean up Illegal Dumping on City Road Allowance
+"Pile of garbage bags dumped at the end of our street",Clean up Illegal Dumping on City Road Allowance
+"Old couch and tires left on the boulevard",Clean up Illegal Dumping on City Road Allowance
+"Construction waste dumped in the laneway",Clean up Illegal Dumping on City Road Allowance
+"People keep dumping junk by the curb near the park",Clean up Illegal Dumping on City Road Allowance
+"Abandoned fridge on the side of the road",Clean up Illegal Dumping on City Road Allowance
+"Someone left a bunch of broken furniture on the sidewalk",Clean up Illegal Dumping on City Road Allowance
+"Illegal dumping of renovation debris on the street",Clean up Illegal Dumping on City Road Allowance
+"Bags of trash thrown in the ditch along the road",Clean up Illegal Dumping on City Road Allowance
+"A TV and boxes dumped at the corner",Clean up Illegal Dumping on City Road Allowance
+"The house next door is falling apart with broken windows",Property Standards and Maintenance Violations
+"My landlord won't fix the mould and leaking ceiling",Property Standards and Maintenance Violations
+"Neighbour's yard is full of junk and rotting wood",Property Standards and Maintenance Violations
+"Abandoned house with a collapsing porch",Property Standards and Maintenance Violations
+"Rental building has no heat and the landlord ignores us",Property Standards and Maintenance Violations
+"The fence next door is broken and leaning into my yard",Property Standards and Maintenance Violations
+"Exterior stairs of the building are crumbling",Property Standards and Maintenance Violations
+"Property owner lets garbage pile up in the yard",Property Standards and Maintenance Violations
+"Pests everywhere in my apartment and the landlord does nothing",Property Standards and Maintenance Violations
+"Vacant house has graffiti and boarded windows falling off",Property Standards and Maintenance Violations
+"How do I pay my property tax bill",OTHER
+"I want to dispute a parking ticket",OTHER
+"What time does the swimming pool open",OTHER
+"How do I apply for a building permit",OTHER
+"Where can I get a marriage licence",OTHER
+"I need to renew my dog licence",OTHER
+"When is the next city council meeting",OTHER
+"Can I book a park permit for a birthday party",OTHER
+"How do I register for recreation programs",OTHER
+"Is the TTC running late today",OTHER
